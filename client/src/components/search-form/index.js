@@ -55,6 +55,7 @@ export default function Search() {
       
         <Results 
         key={obj.id}
+        id={obj.id}
         title={obj.volumeInfo.title}
         authors={obj.volumeInfo.authors}
         description={obj.volumeInfo.description}
