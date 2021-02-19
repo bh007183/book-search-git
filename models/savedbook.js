@@ -10,8 +10,14 @@ const bookSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    Synopsis: {
+    description: {
         type: String
+    },
+    image: {
+        type: String
+    },
+    link: {
+        type:String
     }
 })
 

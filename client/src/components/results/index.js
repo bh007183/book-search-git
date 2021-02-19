@@ -5,15 +5,12 @@ export default function Results(props) {
     <div>
       <div className="row">
         <div className="col s12 m5">
-            <h5>title</h5>
-            <h6>author</h6>
+            <h5>{props.title}</h5>
+            {props.authors.map((item, index) => <h6 key={index}>{item}</h6>)}
             <button style={{float: "right"}}>Save</button>
           <div className="card-panel teal">
             <span className="white-text">
-              I am a very simple card. I am good at containing small bits of
-              information. I am convenient because I require little markup to
-              use effectively. I am similar to what is called a panel in other
-              frameworks.
+             {props.description}
             </span>
           </div>
         </div>
