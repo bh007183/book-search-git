@@ -7,13 +7,7 @@ import API from "../api"
 export default function Search() {
   const [books, setBooks] = useState({
     search: "",
-    results: [{
-        volumeInfo:{
-            authors: ["me"],
-            title: "me",
-            description: "not interesting"
-        }
-    }]
+    results: []
   });
 
 
@@ -51,7 +45,7 @@ export default function Search() {
           </div>
         </div>
       </div>
-      {books.results.map(obj => 
+      {!books.results.length ? (<h1 className="text-center">No Books to Display</h1>) : (books.results.map(obj => 
       
         <Results 
         key={obj.id}
@@ -60,12 +54,10 @@ export default function Search() {
         authors={obj.volumeInfo.authors}
         description={obj.volumeInfo.description}
         link={obj.selfLink}
-        image={() => { if(obj.volumeInfo.imageLinks.smallThumbnail){
-            return obj.volumeInfo.imageLinks.smallThumbnail
-        }}}
+        // image={obj.volumeInfo.imageLinks.smallThumbnail || null}
         />
-        
-      )}
+      
+))}
     </div>
 
   );

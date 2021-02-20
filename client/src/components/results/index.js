@@ -29,7 +29,8 @@ axios.post("/api/book",{
       <div className="row">
         <div className="col s12 m5">
             <h5>{props.title}</h5>
-            {props.authors.map((item, index) => <h6 key={index}>{item}</h6>)}
+            {!props.authors ? (<p>No authors</p>):(
+            props.authors.map((item, index) => <h6 key={index}>{item}</h6>))}
             <button onClick={saveBook} data-id={props.id} style={{float: "right"}}>Save</button>
           <div className="card-panel teal">
             <span className="white-text">
