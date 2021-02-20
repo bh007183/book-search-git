@@ -59,6 +59,10 @@ export default function Search() {
         title={obj.volumeInfo.title}
         authors={obj.volumeInfo.authors}
         description={obj.volumeInfo.description}
+        link={obj.selfLink}
+        image={() => { if(obj.volumeInfo.imageLinks.smallThumbnail){
+            return obj.volumeInfo.imageLinks.smallThumbnail
+        }}}
         />
         
       )}

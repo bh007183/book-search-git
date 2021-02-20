@@ -4,6 +4,7 @@ const db = require("../models")
 
 
     router.post("/api/book", (req, res)=>{
+        console.log(req.body)
         db.BookDB.create(req.body).then(data => res.json(data))
 
     })
@@ -11,6 +12,8 @@ const db = require("../models")
         db.BookDB.find().then(data => res.json(data))
         
     })
+
+  
 
 
 
