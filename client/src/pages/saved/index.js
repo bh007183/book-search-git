@@ -8,7 +8,8 @@ export default function Saved() {
   });
 
   useEffect(() => {
-    API.savedBooks().then((res) => setSavedBooks({ savedResults: res.data }));
+    API.savedBooks().then((res) => {setSavedBooks({ savedResults: res.data }); console.log(res.data)});
+    
   }, []);
 
   return (
